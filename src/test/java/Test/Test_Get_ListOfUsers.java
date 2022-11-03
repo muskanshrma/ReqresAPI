@@ -1,6 +1,7 @@
 package Test;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -27,7 +28,10 @@ public class Test_Get_ListOfUsers {
     public void getBody() {
 
         given().get("https://reqres.in/api/users?page=2").then().
+                assertThat().
                 statusCode(200).
+                and().
+                contentType(ContentType.JSON).
                 body("data.id[1]", equalTo(8)).
                 body("data.first_name", hasItems("Michael","Lindsay")).
                 log().all();

@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class Test_Post_CreateNewUser {
     @Test
-    public void test2() {
+    public void createAndVerifyUser() {
 
         JSONObject request = new JSONObject();
         request.put("name", "Mark");

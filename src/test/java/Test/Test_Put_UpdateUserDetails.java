@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class Test_Put_UpdateUserDetails {
     @Test
-    public void test2() {
+    public void updateAndVerifyUserDetails() {
 
         JSONObject request = new JSONObject();
         request.put("name", "Mark");
